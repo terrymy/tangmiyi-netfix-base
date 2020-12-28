@@ -1,0 +1,41 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 100
+    min-spare-threads: 30
+  connection-timeout: 10000
+  port: 8000
+logging:
+  file: microservice-config-8000.log
+  level: 
+    org.springframework.boot.env.PropertySourcesLoader: TRACE
+    org.springframework.web: INFO
+
+spring: 
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        jdbc:
+          sql: select `key`, `value` from properties where (application =? and profile =? and lable =?) or common = 1
+      label: master
+    refresh:
+        refreshable: none
+  profiles:
+    active: jdbc  #使用jdbc方式激活
+  ## 数据配置
+  datasource:
+    url: jdbc:mysql://${config.server.host}/bsnl_commission_config?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: ${config.server.username}
+    password: ${config.server.password}
+    driver-class-name: com.mysql.jdbc.Driver
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+  instance:
+    hostname: ${spring.cloud.client.ip-address}
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+#启动后访问http://localhost:8000/${application}/${profile}/${lable}

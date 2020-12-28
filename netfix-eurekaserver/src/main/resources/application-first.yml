@@ -1,0 +1,28 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 600
+    min-spare-threads: 30
+  connection-timeout: 10000
+  port: 8888
+spring:
+  application:
+    name: eurekaserver
+
+eureka:
+  server: 
+#    max-threads-for-peer-replication: 0
+    enable-self-preservation: false # 关闭自我保护模式（缺省为打开）
+#    eviction-interval-timer-in-ms: 3000
+#    eviction-interval-timer-in-ms: ${eureka.server.eviction-interval-timer-in-ms}       # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
+  instance:
+    hostname: ${spring.application.name}
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:${server.port}/eureka/
+#启动后访问http://localhost:8888
