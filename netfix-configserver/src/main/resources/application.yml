@@ -26,7 +26,7 @@ spring:
     active: jdbc  #使用jdbc方式激活
   ## 数据配置
   datasource:
-    url: jdbc:mysql://${config.server.host}/bsnl_commission_config?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://${config.server.host}/tangmiyi_configserver?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     username: ${config.server.username}
     password: ${config.server.password}
     driver-class-name: com.mysql.jdbc.Driver
