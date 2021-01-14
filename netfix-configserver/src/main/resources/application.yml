@@ -1,12 +1,15 @@
 server:
   tomcat:
     uri-encoding: UTF-8
-    max-threads: 100
-    min-spare-threads: 30
-  connection-timeout: 10000
+    threads:
+      max: 100
+      min-spare: 30
+    connection-timeout: 10000
   port: 8000
+
 logging:
-  file: microservice-config-8000.log
+  file:
+    name: microservice-config-8000.log
   level: 
     org.springframework.boot.env.PropertySourcesLoader: TRACE
     org.springframework.web: INFO

@@ -4,7 +4,8 @@ spring:
   application:
     name: adminserver
 logging:
-  file: microservice-adminserver-5858.log
+  file:
+    name: microservice-adminserver-5858.log
   level: 
     org.springframework.boot.env.PropertySourcesLoader: TRACE
     org.springframework.web: INFO

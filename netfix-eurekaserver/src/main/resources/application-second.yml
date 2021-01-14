@@ -1,10 +1,12 @@
 server:
   tomcat:
     uri-encoding: UTF-8
-    max-threads: 600
-    min-spare-threads: 30
-  connection-timeout: 10000
+    threads:
+      max: 100
+      min-spare: 30
+    connection-timeout: 10000
   port: 8889
+
 spring:
   application:
     name: eurekaserver-1
