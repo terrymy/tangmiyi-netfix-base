@@ -87,6 +87,7 @@
 			<id>dev</id>
 			<properties>
 				<app.active>dev</app.active>
+				<nacos.namespace>4dd29b17-bbde-4510-8332-69dc0c1ba94b</nacos.namespace>
 			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
@@ -96,6 +97,7 @@
 			<id>uat</id>
 			<properties>
 				<app.active>uat</app.active>
+				<nacos.namespace>75aa67f6-2865-4f41-a3e4-4f212daf1ff6</nacos.namespace>
 				<app.tag.timestamp>-${maven.build.timestamp}</app.tag.timestamp>
 			</properties>
 		</profile>
@@ -103,6 +105,7 @@
 			<id>prod</id>
 			<properties>
 				<app.active>prod</app.active>
+				<nacos.namespace>1b14ad54-1efd-4236-b37e-368e1c35c939</nacos.namespace>
 				<app.tag.timestamp>-${maven.build.timestamp}</app.tag.timestamp>
 			</properties>
 		</profile>
