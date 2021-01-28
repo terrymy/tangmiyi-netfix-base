@@ -2,7 +2,7 @@ spring:
   application:
     name: adminserver
   profiles:
-    active: '@app.active@'
+    active: @app.active@
 #  security:
 #    user:
 #      name: "bsnl"

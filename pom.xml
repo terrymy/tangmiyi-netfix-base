@@ -87,7 +87,7 @@
 			<id>dev</id>
 			<properties>
 				<app.active>dev</app.active>
-				<nacos.namespace>4dd29b17-bbde-4510-8332-69dc0c1ba94b</nacos.namespace>
+				<nacos.namespace>230f13a8-a242-4660-aadb-8a3107eb54a6</nacos.namespace>
 			</properties>
 			<activation>
 				<activeByDefault>true</activeByDefault>
